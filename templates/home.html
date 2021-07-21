@@ -1,0 +1,122 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- ========================= SECTION INTRO ========================= -->
+<section class="section-intro padding-y-sm">
+<div class="container">
+
+<div class="intro-banner-wrap">
+	<img src="{% static 'static/images/banners/cover.jpg' %}" class="img-fluid rounded">
+</div>
+
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION INTRO END// ========================= -->
+
+
+<!-- ========================= SECTION FEATURE ========================= -->
+<section class="section-content padding-y-sm">
+<div class="container">
+<article class="card card-body">
+
+
+<div class="row">
+	<div class="col-md-4">	
+		<figure class="item-feature">
+			<span class="text-primary"><i class="fa fa-2x fa-truck"></i></span>
+			<figcaption class="pt-3">
+				<h5 class="title">Fast delivery</h5>
+				<p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore </p>
+			</figcaption>
+		</figure> <!-- iconbox // -->
+	</div><!-- col // -->
+	<div class="col-md-4">
+		<figure  class="item-feature">
+			<span class="text-primary"><i class="fa fa-2x fa-landmark"></i></span>	
+			<figcaption class="pt-3">
+				<h5 class="title">Creative Strategy</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				 </p>
+			</figcaption>
+		</figure> <!-- iconbox // -->
+	</div><!-- col // -->
+    <div class="col-md-4">
+		<figure  class="item-feature">
+			<span class="text-primary"><i class="fa fa-2x fa-lock"></i></span>
+			<figcaption class="pt-3">
+				<h5 class="title">High secured </h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				 </p>
+			</figcaption>
+		</figure> <!-- iconbox // -->
+	</div> <!-- col // -->
+</div>
+</article>
+
+</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION FEATURE END// ========================= -->
+
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content">
+<div class="container">
+
+<header class="section-heading">
+	<h3 class="section-title">Popular products</h3>
+</header><!-- sect-heading -->
+
+	
+<div class="row">
+    {% for product in products %}
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="{{ product.get_url }}" class="img-wrap"> <img src="{{ product.Cat_Image.url }}"> </a>
+			<figcaption class="info-wrap">
+				<a href="{{ product.get_url }}" class="title">{{ product.Cat_Name }}</a>
+
+				<div class="rating-wrap">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active"> 
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+						</li>
+					</ul>
+					<span class="label-rating text-muted"> 34 reviws</span>
+				</div>
+				<div class="price mt-1">{{ product.Descreption }}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+    {% endfor %}
+
+</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+
+
+
+
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name padding-y">
+<div class="container">
+
+<h3 class="mb-3">Download app demo text</h3>
+<a href="#"><img src="images/misc/appstore.png" height="40"></a>
+<a href="#"><img src="images/misc/appstore.png" height="40"></a>
+
+</div><!-- container // -->
+</section>
+<!-- ========================= SECTION  END// ======================= -->
+
+
+</body>
+</html>
+{% endblock %}
